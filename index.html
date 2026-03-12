@@ -386,111 +386,108 @@
         /* Payment Methods Grid */
         .payment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
         .payment-card {
             background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 30px;
+            padding: 2rem;
+            border-radius: 24px;
             box-shadow: var(--shadow-md);
             transition: var(--transition);
-            text-align: center;
             border: 1px solid rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
             cursor: pointer;
-        }
-
-        .payment-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-1);
-            transform: scaleX(0);
-            transition: transform 0.5s ease;
-        }
-
-        .payment-card:hover::before {
-            transform: scaleX(1);
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .payment-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
+            border-color: var(--secondary);
         }
 
         .payment-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 1.5rem;
+            width: 70px;
+            height: 70px;
             background: var(--light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            color: var(--secondary);
             transition: var(--transition);
         }
 
         .payment-card:hover .payment-icon {
-            transform: rotateY(360deg);
             background: var(--gradient-1);
             color: var(--white);
+            transform: scale(1.1);
         }
 
         .payment-card h3 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             margin-bottom: 0.5rem;
             color: var(--primary);
         }
 
         .payment-card p {
             color: var(--gray);
-            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
 
-        .payment-features {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 1.5rem;
+        .payment-details {
+            border-top: 1px solid var(--light);
+            padding-top: 1rem;
+            margin-top: 0.5rem;
         }
 
-        .payment-features li {
+        .detail-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
             color: var(--gray);
+            margin-bottom: 0.5rem;
         }
 
-        .payment-features i {
+        .detail-item i {
             color: var(--secondary);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
 
         .payment-badge {
             display: inline-block;
-            padding: 0.3rem 1rem;
-            background: var(--gradient-1);
-            color: var(--white);
-            border-radius: 50px;
-            font-size: 0.8rem;
+            padding: 0.25rem 0.8rem;
+            background: var(--light);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.75rem;
             font-weight: 600;
             margin-top: 1rem;
         }
 
         .payment-badge.local {
-            background: var(--ethiopia-green);
+            background: rgba(30, 140, 60, 0.1);
+            color: var(--ethiopia-green);
         }
 
         .payment-badge.international {
-            background: var(--primary);
+            background: rgba(10, 37, 64, 0.1);
+            color: var(--primary);
+        }
+
+        .external-link-icon {
+            display: inline-block;
+            margin-left: 0.3rem;
+            font-size: 0.8rem;
+            color: var(--gray);
         }
 
         /* Bank Partners */
@@ -509,14 +506,14 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 1rem;
         }
 
         .bank-item {
             width: 100px;
             height: 100px;
             background: var(--white);
-            border-radius: 20px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -525,17 +522,21 @@
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
             cursor: pointer;
+            border: 1px solid var(--light);
+            text-decoration: none;
+            color: var(--primary);
         }
 
         .bank-item:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
             background: var(--gradient-1);
             color: var(--white);
+            border-color: transparent;
         }
 
         .bank-item i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--primary);
             transition: var(--transition);
         }
@@ -549,50 +550,6 @@
             font-weight: 600;
         }
 
-        /* Mobile Money Section */
-        .mobile-money-showcase {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .mobile-card {
-            background: linear-gradient(135deg, #f5f7fa, #e9ecef);
-            padding: 2rem;
-            border-radius: 30px;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .mobile-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .mobile-card i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .mobile-card .telebirr { color: #8B4513; }
-        .mobile-card .mpesa { color: #4CAF50; }
-        .mobile-card .airtel { color: #E30A17; }
-
-        .qr-simulator {
-            width: 100px;
-            height: 100px;
-            background: var(--white);
-            border-radius: 20px;
-            margin: 1rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--dark);
-            border: 2px dashed var(--secondary);
-        }
-
         /* ===== SERVICES SECTION ===== */
         .services {
             padding: 6rem 0;
@@ -601,35 +558,46 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
         .service-card {
             background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 30px;
+            padding: 2rem;
+            border-radius: 24px;
             box-shadow: var(--shadow-md);
             transition: var(--transition);
             text-align: center;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
         }
 
         .service-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: var(--gradient-1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
         }
 
         /* ===== STATS SECTION ===== */
@@ -641,19 +609,24 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 2rem;
             text-align: center;
         }
 
         .stat-item {
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
         }
 
         /* ===== CTA SECTION ===== */
@@ -683,7 +656,7 @@
         }
 
         .cta-section h2 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
             position: relative;
             z-index: 2;
@@ -700,45 +673,46 @@
         .cta-section .btn {
             background: var(--white);
             color: var(--primary);
-            font-size: 1.2rem;
-            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
             position: relative;
             z-index: 2;
+        }
+
+        .cta-section .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         /* ===== FOOTER ===== */
         footer {
             background: var(--primary);
             color: var(--white);
-            padding: 5rem 0 2rem;
+            padding: 4rem 0 2rem;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 4rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
 
         .footer-section h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
 
         .footer-section h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            position: relative;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
         }
 
-        .footer-section h4::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--gradient-1);
+        .footer-section p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
 
         .social-links {
@@ -747,8 +721,8 @@
         }
 
         .social-links a {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             display: flex;
@@ -756,24 +730,105 @@
             justify-content: center;
             color: var(--white);
             transition: var(--transition);
+            text-decoration: none;
         }
 
         .social-links a:hover {
             background: var(--secondary);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .footer-section ul a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer-section ul a i {
+            margin-right: 0.5rem;
+            width: 20px;
         }
 
         .contact-info li {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: 0.8rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info i {
+            color: var(--secondary);
+            width: 20px;
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== HAMBURGER MENU ===== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* ===== EXTERNAL LINK NOTICE ===== */
+        .external-notice {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .external-notice i {
+            color: var(--secondary);
+            margin-right: 0.5rem;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -786,16 +841,25 @@
             .hero-buttons {
                 justify-content: center;
             }
-
-            .mobile-money-showcase {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 768px) {
             .nav-menu,
             .nav-buttons {
                 display: none;
+            }
+
+            .nav-menu.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                padding: 2rem;
+                text-align: center;
+                gap: 1rem;
             }
 
             .hamburger {
@@ -811,7 +875,7 @@
             }
 
             .bank-grid {
-                gap: 1rem;
+                gap: 0.8rem;
             }
 
             .bank-item {
@@ -864,12 +928,12 @@
         </div>
     </section>
 
-    <!-- Payment Methods Section - NEW -->
+    <!-- Payment Methods Section - LINKS TO OFFICIAL WEBSITES -->
     <section class="payment-section">
         <div class="container">
             <div class="section-header">
                 <h2>Secure <span>Payment Methods</span></h2>
-                <p>We accept multiple payment options for your convenience in Ethiopia and worldwide</p>
+                <p>Click any payment method to visit the official website</p>
                 <div class="ethiopia-flag-badge">
                     <div class="flag-dots">
                         <div class="flag-dot green"></div>
@@ -880,135 +944,157 @@
                 </div>
             </div>
 
-            <!-- Payment Methods Grid -->
+            <!-- Payment Methods Grid - ALL LINK TO OFFICIAL WEBSITES -->
             <div class="payment-grid">
-                <!-- CBE Card -->
-                <div class="payment-card" onclick="location.href='payment.html?method=cbe'">
+                <!-- CBE Card - Official CBE Website -->
+                <a href="https://www.combanketh.et" target="_blank" rel="noopener noreferrer" class="payment-card">
                     <div class="payment-icon">
                         <i class="fas fa-university"></i>
                     </div>
-                    <h3>CBE</h3>
+                    <h3>CBE <i class="fas fa-external-link-alt external-link-icon"></i></h3>
                     <p>Commercial Bank of Ethiopia</p>
-                    <ul class="payment-features">
-                        <li><i class="fas fa-check"></i> Direct bank transfer</li>
-                        <li><i class="fas fa-check"></i> No fees for CBE customers</li>
-                        <li><i class="fas fa-check"></i> Instant processing</li>
-                    </ul>
-                    <span class="payment-badge local">🇪🇹 Local</span>
-                </div>
+                    <div class="payment-details">
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Official Website</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Internet Banking</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>CBE Birr App</span>
+                        </div>
+                    </div>
+                    <span class="payment-badge local">🇪🇹 Visit CBE</span>
+                </a>
 
-                <!-- Telebirr Card -->
-                <div class="payment-card" onclick="location.href='payment.html?method=telebirr'">
+                <!-- Telebirr Card - Official Ethiotelecom Website -->
+                <a href="https://www.ethiotelecom.et/telebirr" target="_blank" rel="noopener noreferrer" class="payment-card">
                     <div class="payment-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Telebirr</h3>
+                    <h3>Telebirr <i class="fas fa-external-link-alt external-link-icon"></i></h3>
                     <p>Ethiopia's Leading Mobile Money</p>
-                    <ul class="payment-features">
-                        <li><i class="fas fa-check"></i> Pay via QR code</li>
-                        <li><i class="fas fa-check"></i> Instant transfer</li>
-                        <li><i class="fas fa-check"></i> Available nationwide</li>
-                    </ul>
-                    <span class="payment-badge local">🇪🇹 Mobile</span>
-                </div>
+                    <div class="payment-details">
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Official Website</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Download App</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>USSD: *127#</span>
+                        </div>
+                    </div>
+                    <span class="payment-badge local">🇪🇹 Visit Telebirr</span>
+                </a>
 
-                <!-- M-PESA Card -->
-                <div class="payment-card" onclick="location.href='payment.html?method=mpesa'">
+                <!-- M-PESA Card - Official Safaricom Website -->
+                <a href="https://www.safaricom.co.ke/personal/m-pesa" target="_blank" rel="noopener noreferrer" class="payment-card">
                     <div class="payment-icon">
                         <i class="fas fa-wifi"></i>
                     </div>
-                    <h3>M-PESA</h3>
+                    <h3>M-PESA <i class="fas fa-external-link-alt external-link-icon"></i></h3>
                     <p>Mobile Money Transfer</p>
-                    <ul class="payment-features">
-                        <li><i class="fas fa-check"></i> Send money easily</li>
-                        <li><i class="fas fa-check"></i> Low transaction fees</li>
-                        <li><i class="fas fa-check"></i> Secure & reliable</li>
-                    </ul>
-                    <span class="payment-badge">🌍 Regional</span>
-                </div>
+                    <div class="payment-details">
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Official Website</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>USSD: *334#</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Safaricom</span>
+                        </div>
+                    </div>
+                    <span class="payment-badge">🌍 Visit M-PESA</span>
+                </a>
 
-                <!-- Visa/Mastercard Card -->
-                <div class="payment-card" onclick="location.href='payment.html?method=card'">
+                <!-- Visa/Mastercard Card - Official Visa Website -->
+                <a href="https://www.visa.com" target="_blank" rel="noopener noreferrer" class="payment-card">
                     <div class="payment-icon">
                         <i class="fas fa-credit-card"></i>
                     </div>
-                    <h3>Credit Cards</h3>
-                    <p>Visa • Mastercard • Amex</p>
-                    <ul class="payment-features">
-                        <li><i class="fas fa-check"></i> 256-bit SSL secure</li>
-                        <li><i class="fas fa-check"></i> International payments</li>
-                        <li><i class="fas fa-check"></i> Instant processing</li>
-                    </ul>
-                    <span class="payment-badge international">🌎 Global</span>
-                </div>
+                    <h3>Credit Cards <i class="fas fa-external-link-alt external-link-icon"></i></h3>
+                    <p>Visa · Mastercard · Amex</p>
+                    <div class="payment-details">
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Visa Official</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Mastercard Official</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>American Express</span>
+                        </div>
+                    </div>
+                    <span class="payment-badge international">🌎 Visit Visa</span>
+                </a>
             </div>
 
-            <!-- Bank Partners -->
+            <!-- Bank Partners - All Link to Official Bank Websites -->
             <div class="bank-partners">
-                <h3>Partner Banks in Ethiopia</h3>
+                <h3>Official Ethiopian Bank Websites</h3>
                 <div class="bank-grid">
-                    <div class="bank-item">
+                    <a href="https://www.combanketh.et" target="_blank" rel="noopener noreferrer" class="bank-item">
                         <i class="fas fa-university"></i>
                         <span>CBE</span>
-                    </div>
-                    <div class="bank-item">
+                    </a>
+                    <a href="https://dashenbanksc.com" target="_blank" rel="noopener noreferrer" class="bank-item">
                         <i class="fas fa-university"></i>
                         <span>Dashen</span>
-                    </div>
-                    <div class="bank-item">
+                    </a>
+                    <a href="https://awashbank.com" target="_blank" rel="noopener noreferrer" class="bank-item">
                         <i class="fas fa-university"></i>
                         <span>Awash</span>
-                    </div>
-                    <div class="bank-item">
+                    </a>
+                    <a href="https://www.abyssinia-bank.com" target="_blank" rel="noopener noreferrer" class="bank-item">
                         <i class="fas fa-university"></i>
                         <span>Abyssinia</span>
-                    </div>
-                    <div class="bank-item">
+                    </a>
+                    <a href="https://www.wegagen.com" target="_blank" rel="noopener noreferrer" class="bank-item">
                         <i class="fas fa-university"></i>
                         <span>Wegagen</span>
-                    </div>
-                    <div class="bank-item">
+                    </a>
+                    <a href="https://nibinternationalbank.com" target="_blank" rel="noopener noreferrer" class="bank-item">
                         <i class="fas fa-university"></i>
                         <span>NIB</span>
-                    </div>
+                    </a>
+                    <a href="https://unitedbank.com.et" target="_blank" rel="noopener noreferrer" class="bank-item">
+                        <i class="fas fa-university"></i>
+                        <span>United</span>
+                    </a>
+                    <a href="https://zemenbank.com" target="_blank" rel="noopener noreferrer" class="bank-item">
+                        <i class="fas fa-university"></i>
+                        <span>Zemen</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Mobile Money Showcase -->
-            <div class="mobile-money-showcase">
-                <div class="mobile-card">
-                    <i class="fas fa-qrcode telebirr"></i>
-                    <h4>Telebirr QR</h4>
-                    <div class="qr-simulator">
-                        <i class="fas fa-qrcode"></i>
-                    </div>
-                    <p>Scan & Pay</p>
-                </div>
-                <div class="mobile-card">
-                    <i class="fas fa-phone-alt mpesa"></i>
-                    <h4>M-PESA</h4>
-                    <div style="font-size: 2rem; margin: 1rem 0;">📱</div>
-                    <p>*334#</p>
-                </div>
-                <div class="mobile-card">
-                    <i class="fas fa-globe"></i>
-                    <h4>International</h4>
-                    <div style="display: flex; gap: 0.5rem; justify-content: center; margin: 1rem 0;">
-                        <i class="fab fa-cc-visa" style="color: #1A1F71;"></i>
-                        <i class="fab fa-cc-mastercard" style="color: #EB001B;"></i>
-                        <i class="fab fa-cc-amex" style="color: #2E77BB;"></i>
-                    </div>
-                    <p>Global payments</p>
-                </div>
+            <!-- External Link Notice -->
+            <div class="external-notice">
+                <i class="fas fa-external-link-alt"></i>
+                Clicking any payment method will open the official website in a new tab. All transactions are processed securely by the respective financial institutions.
             </div>
 
             <!-- Payment CTA -->
-            <div style="text-align: center; margin-top: 4rem;">
-                <a href="payment.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
-                    <i class="fas fa-lock"></i> Make a Secure Payment
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="contact.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
+                    <i class="fas fa-credit-card"></i> Need Help? Contact Us
                 </a>
                 <p style="margin-top: 1rem; color: var(--gray);">
-                    <i class="fas fa-shield-alt"></i> 256-bit SSL Encrypted • PCI Compliant
+                    <i class="fas fa-shield-alt"></i> We don't store your payment information
                 </p>
             </div>
         </div>
@@ -1060,19 +1146,19 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">50+</div>
-                    <p>Projects Completed</p>
+                    <div class="stat-label">Projects Completed</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">100+</div>
-                    <p>Happy Clients</p>
+                    <div class="stat-label">Happy Clients</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">10k+</div>
-                    <p>Transactions</p>
+                    <div class="stat-label">Transactions</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">6</div>
-                    <p>Payment Methods</p>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Partner Banks</div>
                 </div>
             </div>
         </div>
@@ -1095,19 +1181,29 @@
                     <h3>ethioExpertise</h3>
                     <p>Professional web solutions with secure payment integration for Ethiopian and international clients.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h4>Payment Methods</h4>
                     <ul>
-                        <li><i class="fas fa-university"></i> CBE</li>
-                        <li><i class="fas fa-mobile-alt"></i> Telebirr</li>
-                        <li><i class="fas fa-wifi"></i> M-PESA</li>
-                        <li><i class="fab fa-cc-visa"></i> Visa/Mastercard</li>
+                        <li><a href="https://www.combanketh.et" target="_blank" rel="noopener noreferrer"><i class="fas fa-university"></i> CBE Bank</a></li>
+                        <li><a href="https://www.ethiotelecom.et/telebirr" target="_blank" rel="noopener noreferrer"><i class="fas fa-mobile-alt"></i> Telebirr</a></li>
+                        <li><a href="https://www.safaricom.co.ke/personal/m-pesa" target="_blank" rel="noopener noreferrer"><i class="fas fa-wifi"></i> M-PESA</a></li>
+                        <li><a href="https://www.visa.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-cc-visa"></i> Visa</a></li>
+                        <li><a href="https://www.mastercard.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-cc-mastercard"></i> Mastercard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Partner Banks</h4>
+                    <ul>
+                        <li><a href="https://dashenbanksc.com" target="_blank" rel="noopener noreferrer">Dashen Bank</a></li>
+                        <li><a href="https://awashbank.com" target="_blank" rel="noopener noreferrer">Awash Bank</a></li>
+                        <li><a href="https://www.abyssinia-bank.com" target="_blank" rel="noopener noreferrer">Abyssinia Bank</a></li>
+                        <li><a href="https://www.wegagen.com" target="_blank" rel="noopener noreferrer">Wegagen Bank</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1120,7 +1216,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 AliExpertise. Made with ❤️ in Ethiopia | Secure Payments 🇪🇹</p>
+                <p>&copy; 2026 ethioExpertise. All rights reserved. Addis Ababa, Ethiopia</p>
             </div>
         </div>
     </footer>
@@ -1145,30 +1241,45 @@
             navMenu.classList.toggle('active');
         });
 
-        // Counter animation
-        function animateStats() {
-            const stats = document.querySelectorAll('.stat-number');
-            stats.forEach(stat => {
-                const value = stat.innerText.replace('+', '');
-                // Animation logic here
-            });
-        }
-
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
             });
         });
 
-        document.querySelectorAll('.payment-card, .service-card').forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
+        // Counter animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numbers = document.querySelectorAll('.stat-number');
+                    numbers.forEach(num => {
+                        const value = parseInt(num.innerText.replace('+', ''));
+                        let start = 0;
+                        const increment = value / 50;
+                        const counter = setInterval(() => {
+                            start += increment;
+                            if (start < value) {
+                                num.innerText = Math.ceil(start) + '+';
+                            } else {
+                                num.innerText = value + '+';
+                                clearInterval(counter);
+                            }
+                        }, 30);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(document.querySelector('.stats'));
+
+        // Add external link icon to all external links
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            if (!link.querySelector('i')) {
+                // Optional: add external link icon
+            }
         });
     </script>
 </body>

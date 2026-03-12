@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ethioExpertise</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Dashboard Navigation -->
+    <nav class="navbar dashboard-nav">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Ali<span>Expertise</span></a>
+            </div>
+            <div class="welcome-user">
+                <i class="fas fa-user-circle"></i>
+                <span>Welcome, <strong id="displayName">John Doe</strong></span>
+            </div>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- Sidebar -->
+                <div class="dashboard-sidebar">
+                    <ul>
+                        <li class="active" onclick="switchDashboardTab('overview')"><i class="fas fa-home"></i> Overview</li>
+                        <li onclick="switchDashboardTab('profile')"><i class="fas fa-user"></i> Profile</li>
+                        <li onclick="switchDashboardTab('projects')"><i class="fas fa-folder"></i> Projects</li>
+                        <li onclick="switchDashboardTab('messages')"><i class="fas fa-envelope"></i> Messages <span class="badge">3</span></li>
+                        <li onclick="switchDashboardTab('settings')"><i class="fas fa-cog"></i> Settings</li>
+                        <li onclick="switchDashboardTab('analytics')"><i class="fas fa-chart-bar"></i> Analytics</li>
+                    </ul>
+                </div>
+
+                <!-- Main Content -->
+                <div class="dashboard-main">
+                    <!-- Overview Tab -->
+                    <div id="overview-tab" class="dashboard-tab active">
+                        <h2>Dashboard Overview</h2>
+                        
+                        <div class="stats-cards">
+                            <div class="stat-card">
+                                <i class="fas fa-folder-open"></i>
+                                <div>
+                                    <h3>5</h3>
+                                    <p>Active Projects</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h3>3</h3>
+                                    <p>Unread Messages</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h3>2</h3>
+                                    <p>Pending Tasks</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h3>12</h3>
+                                    <p>Completed</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="recent-projects">
+                            <h3>Recent Projects</h3>
+                            <div class="project-item">
+                                <div class="project-info">
+                                    <h4>E-commerce Platform</h4>
+                                    <p>Last updated: 2 days ago</p>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 75%">75%</div>
+                                </div>
+                                <button class="btn btn-small">Continue</button>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-info">
+                                    <h4>Healthcare App</h4>
+                                    <p>Last updated: 5 days ago</p>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 30%">30%</div>
+                                </div>
+                                <button class="btn btn-small">Continue</button>
+                            </div>
+                        </div>
+
+                        <div class="recent-messages">
+                            <h3>Recent Messages</h3>
+                            <div class="message-item">
+                                <div class="message-avatar">JD</div>
+                                <div class="message-content">
+                                    <h4>John Doe <small>2 hours ago</small></h4>
+                                    <p>Looking forward to the project update meeting...</p>
+                                </div>
+                            </div>
+                            <div class="message-item">
+                                <div class="message-avatar">ST</div>
+                                <div class="message-content">
+                                    <h4>Sarah Team <small>1 day ago</small></h4>
+                                    <p>The design files are ready for review</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Tab -->
+                    <div id="profile-tab" class="dashboard-tab">
+                        <h2>My Profile</h2>
+                        <div class="profile-form">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" value="John Doe" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" value="john.doe@example.com" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Company</label>
+                                <input type="text" value="TechStart Inc.">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="tel" value="+1 234 567 890">
+                            </div>
+                            <button class="btn btn-primary">Update Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ethioExpertise | Addis Ababa, Ethiopia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0A2540;
+            --secondary: #00A896;
+            --accent: #FF6B4A;
+            --light: #F8F9FA;
+            --dark: #2D3E50;
+            --white: #FFFFFF;
+            --gray: #6C757D;
+            --ethiopia-gold: #DAA520;
+            --ethiopia-green: #1E8C3C;
+            --ethiopia-red: #C41E3A;
+            --gradient-1: linear-gradient(135deg, #0A2540 0%, #00A896 100%);
+            --gradient-2: linear-gradient(135deg, #FF6B4A 0%, #FF8E53 100%);
+            --gradient-ethiopia: linear-gradient(135deg, #1E8C3C 0%, #DAA520 50%, #C41E3A 100%);
+            --shadow-sm: 0 5px 20px rgba(0,0,0,0.1);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.15);
+            --shadow-lg: 0 15px 40px rgba(0,0,0,0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ===== CUSTOM SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-1);
+            border-radius: 6px;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            background: rgba(10, 37, 64, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(10, 37, 64, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-menu a:hover::before,
+        .nav-menu a.active::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,168,150,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,168,150,0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            background: var(--gradient-1);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI3NjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiIGlkPSJhIj48c3RvcCBzdG9wLWNvbG9yPSIjZmZmIiBvZmZzZXQ9IjAlIi8+PHN0b3Agc3RvcC1jb2xvcj0iI2ZmZiIgb2Zmc2V0PSIxMDAlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTAgMGgxNDQwdjc2MEgweiIgZmlsbD0idXJsKCNhKSIgZmlsbC1ydWxlPSJldmVub2RkIiBvcGFjaXR5PSIwLjA1Ii8+PC9zdmc+');
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .page-header h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .page-header h1 span {
+            color: var(--accent);
+            position: relative;
+        }
+
+        .page-header h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+            animation: expandWidth 1s ease forwards;
+        }
+
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .ethiopia-flag {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 1.5rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .flag-stripe {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .flag-stripe.green {
+            background: var(--ethiopia-green);
+            box-shadow: 0 2px 10px rgba(30,140,60,0.5);
+        }
+
+        .flag-stripe.yellow {
+            background: var(--ethiopia-gold);
+            box-shadow: 0 2px 10px rgba(218,165,32,0.5);
+        }
+
+        .flag-stripe.red {
+            background: var(--ethiopia-red);
+            box-shadow: 0 2px 10px rgba(196,30,58,0.5);
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 5rem 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            animation: slideInLeft 1s ease;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-1);
+        }
+
+        .contact-form h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .contact-form h2 span {
+            color: var(--secondary);
+        }
+
+        .contact-form > p {
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid var(--light-gray);
+            border-radius: 15px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--light);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background: var(--white);
+            box-shadow: 0 0 0 5px rgba(0,168,150,0.1);
+        }
+
+        .form-group input.error,
+        .form-group textarea.error {
+            border-color: var(--accent);
+        }
+
+        .form-group .error-message {
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            display: block;
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .input-icon input {
+            padding-left: 3rem;
+        }
+
+        .input-icon input:focus + i {
+            color: var(--secondary);
+        }
+
+        .character-counter {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-top: 0.3rem;
+        }
+
+        .character-counter i {
+            color: var(--secondary);
+            margin-right: 0.3rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+            background: var(--gradient-1);
+            color: var(--white);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,168,150,0.4);
+        }
+
+        .submit-btn i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ===== CONTACT INFO ===== */
+        .contact-info {
+            animation: slideInRight 1s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-1);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateX(10px) translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .info-card:hover::before {
+            width: 10px;
+        }
+
+        .info-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .info-card:hover .info-icon {
+            transform: rotate(360deg);
+        }
+
+        .info-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+            color: var(--primary);
+        }
+
+        .info-content p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .info-content .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .business-hours {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-top: 2rem;
+        }
+
+        .business-hours h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .business-hours h3 i {
+            color: var(--secondary);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            border-bottom: 1px dashed var(--light-gray);
+        }
+
+        .hour-item .day {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .hour-item .time {
+            color: var(--secondary);
+        }
+
+        .hour-item.closed .time {
+            color: var(--accent);
+        }
+
+        /* ===== MAP SECTION ===== */
+        .map-section {
+            margin-top: 3rem;
+            padding: 3rem;
+            background: var(--light);
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .map-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .map-section h2 span {
+            color: var(--secondary);
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            height: 500px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .map-overlay i {
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+
+        .map-overlay span {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .map-overlay strong {
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        /* ===== SOCIAL SECTION ===== */
+        .social-section {
+            padding: 4rem 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .social-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .social-section h2 span {
+            color: var(--secondary);
+        }
+
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .social-item {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .social-item:hover::before {
+            opacity: 1;
+        }
+
+        .social-item i {
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .social-item:hover {
+            transform: translateY(-10px) rotate(360deg);
+        }
+
+        .social-item:hover i {
+            color: var(--white);
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .faq-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .faq-section h2 span {
+            color: var(--secondary);
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .faq-question:hover {
+            background: var(--light);
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .faq-question i {
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+            color: var(--gray);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 200px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        /* ===== SUCCESS MODAL ===== */
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            z-index: 2000;
+            text-align: center;
+            animation: modalPop 0.5s ease;
+        }
+
+        @keyframes modalPop {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .success-modal i {
+            font-size: 5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .success-modal h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .success-modal p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 1999;
+            backdrop-filter: blur(5px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .footer-section p {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px) rotate(360deg);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-section ul a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--light-gray);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--light-gray);
+        }
+
+        .footer-bottom i {
+            color: var(--accent);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
+            }
+
+            .map-container {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu,
+            .nav-buttons {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .info-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            .map-overlay {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-bottom: 1rem;
+                border-radius: 15px;
+            }
+
+            .social-grid {
+                gap: 1rem;
+            }
+
+            .social-item {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">ethio<span>Expertise</span></a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="login.html#signup" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header with Ethiopia Flag -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact <span>Us</span></h1>
+            <p>We're here to help! Reach out to us anytime.</p>
+            <div class="ethiopia-flag">
+                <div class="flag-stripe green" title="Ethiopia - Green"></div>
+                <div class="flag-stripe yellow" title="Ethiopia - Yellow"></div>
+                <div class="flag-stripe red" title="Ethiopia - Red"></div>
+            </div>
+            <p style="font-size: 1.1rem; margin-top: 1rem;">
+                <i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> 
+                <strong>Addis Ababa, Ethiopia - 4 Kilo</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2>Send us a <span>Message</span></h2>
+                    <p>We'll get back to you within 24 hours</p>
+                    
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <small class="error-message" id="nameError"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <div class="input-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <small class="error-message" id="emailError"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="phone" name="phone" placeholder="+251 9XX XXX XXX">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="project">Project Discussion</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." onkeyup="countChars()" required></textarea>
+                            <div class="character-counter">
+                                <i class="fas fa-keyboard"></i>
+                                <span id="charCount">0/500</span>
+                            </div>
+                            <small class="error-message" id="messageError"></small>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <!-- Ethiopia Office -->
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Ethiopia Office</h3>
+                            <p><span class="highlight">4 Kilo, Addis Ababa</span></p>
+                            <p>Near Addis Ababa University<br>Faculty of Technology</p>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--gray);">
+                                <i class="fas fa-flag" style="color: var(--ethiopia-green);"></i> 
+                                Landmark: Opposite 4 Kilo Campus
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Call Us</h3>
+                            <p><span class="highlight">+251 911 234 567</span></p>
+                            <p><span class="highlight">+251 116 123 456</span></p>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Toll-free within Ethiopia</p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Us</h3>
+                            <p><span class="highlight">info@aliexpertise.et</span></p>
+                            <p><span class="highlight">support@aliexpertise.et</span></p>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">24/7 Support Available</p>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="business-hours">
+                        <h3><i class="fas fa-clock"></i> Business Hours</h3>
+                        <div class="hours-grid">
+                            <div class="hour-item">
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">8:00 - 18:00</span>
+                            </div>
+                            <div class="hour-item">
+                                <span class="day">Saturday</span>
+                                <span class="time">9:00 - 13:00</span>
+                            </div>
+                            <div class="hour-item closed">
+                                <span class="day">Sunday</span>
+                                <span class="time">Closed</span>
+                            </div>
+                            <div class="hour-item">
+                                <span class="day">Holidays</span>
+                                <span class="time">By Appointment</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray);">
+                            <i class="fas fa-info-circle" style="color: var(--secondary);"></i>
+                            Ethiopian time (EAT, UTC+3)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section - 4 Kilo, Addis Ababa -->
+            <div class="map-section">
+                <h2>Find Us <span>in 4 Kilo</span></h2>
+                <div class="map-container">
+                    <!-- Map Overlay with Address -->
+                    <div class="map-overlay">
+                        <i class="fas fa-map-pin"></i>
+                        <span>We are here:</span>
+                        <strong>4 Kilo, Addis Ababa</strong>
+                    </div>
+                    
+                    <!-- Google Maps Embed - 4 Kilo, Addis Ababa -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.735328769814!2d38.763314!3d9.046111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b8f5d8c3f3d8d%3A0x3c3b5b5b5b5b5b5b!2s4%20Kilo%2C%20Addis%20Ababa!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+                
+                <!-- Additional Location Info -->
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-train" style="color: var(--secondary);"></i>
+                        <span>Near 4 Kilo Bus Station</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-university" style="color: var(--secondary);"></i>
+                        <span>Opposite Addis Ababa University</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-coffee" style="color: var(--secondary);"></i>
+                        <span>Near 4 Kilo Coffee Shop</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-section">
+        <div class="container">
+            <h2>Connect With <span>Us</span></h2>
+            <p style="color: var(--gray); margin-bottom: 2rem;">Follow us on social media for updates and news</p>
+            <div class="social-grid">
+                <a href="#" class="social-item"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Where exactly are you located in Addis Ababa?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We are located in 4 Kilo, Addis Ababa, directly opposite the Addis Ababa University Faculty of Technology. Our office is easily accessible by public transport and there's parking available for clients.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What are your response times for inquiries?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We typically respond to all inquiries within 2-4 hours during business hours. For urgent matters, please call our phone number directly.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do you offer services outside Ethiopia?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! While our physical office is in Addis Ababa, we serve clients globally through remote consultations and project delivery. We have clients in the US, Europe, and across Africa.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Can I visit your office without an appointment?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While walk-ins are welcome, we recommend scheduling an appointment to ensure the right team member is available to assist you. You can call us or use the contact form to set up a meeting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="success-modal" id="successModal">
+        <i class="fas fa-check-circle"></i>
+        <h3>Message Sent!</h3>
+        <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+        <button class="btn btn-primary" onclick="closeModal()">Close</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AliExpertise</h3>
+                    <p>Professional web solutions for modern businesses. We bring your ideas to life with cutting-edge technology and innovative design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Ethiopia Office</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 4 Kilo, Addis Ababa</li>
+                        <li><i class="fas fa-phone"></i> +251 911 234 567</li>
+                        <li><i class="fas fa-envelope"></i> info@aliexpertise.et</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AliExpertise. All rights reserved. | Designed in <i class="fas fa-heart" style="color: #FF6B4A;"></i> from Addis Ababa, Ethiopia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Character Counter
+        function countChars() {
+            const message = document.getElementById('message');
+            const count = message.value.length;
+            const charCount = document.getElementById('charCount');
+            charCount.textContent = count + '/500';
+            
+            if (count > 500) {
+                message.value = message.value.substring(0, 500);
+                charCount.textContent = '500/500';
+            }
+        }
+
+        // Form Validation and Submission
+        function validateEmail(email) {
+            return email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            let isValid = true;
+            
+            // Reset errors
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('messageError').textContent = '';
+            
+            // Validate name
+            if (name.trim().length < 2) {
+                document.getElementById('nameError').textContent = 'Please enter your full name';
+                document.getElementById('name').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('name').classList.remove('error');
+            }
+            
+            // Validate email
+            if (!validateEmail(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                document.getElementById('email').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('email').classList.remove('error');
+            }
+            
+            // Validate subject
+            if (!subject) {
+                alert('Please select a subject');
+                isValid = false;
+            }
+            
+            // Validate message
+            if (message.trim().length < 10) {
+                document.getElementById('messageError').textContent = 'Message must be at least 10 characters';
+                document.getElementById('message').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('message').classList.remove('error');
+            }
+            
+            if (isValid) {
+                // Show success modal
+                document.getElementById('modalOverlay').style.display = 'block';
+                document.getElementById('successModal').style.display = 'block';
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                document.getElementById('charCount').textContent = '0/500';
+            }
+            
+            return false;
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+            document.getElementById('successModal').style.display = 'none';
+        }
+
+        // Close modal when clicking overlay
+        document.getElementById('modalOverlay').addEventListener('click', closeModal);
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

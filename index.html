@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ethioExpertise - Professional Web Solutions | Addis Ababa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0A2540;
+            --secondary: #00A896;
+            --accent: #FF6B4A;
+            --light: #F8F9FA;
+            --dark: #2D3E50;
+            --white: #FFFFFF;
+            --gray: #6C757D;
+            --ethiopia-gold: #DAA520;
+            --ethiopia-green: #1E8C3C;
+            --ethiopia-red: #C41E3A;
+            --gradient-1: linear-gradient(135deg, #0A2540, #00A896);
+            --gradient-2: linear-gradient(135deg, #FF6B4A, #FF8E53);
+            --gradient-3: linear-gradient(135deg, #1E8C3C, #DAA520, #C41E3A);
+            --shadow-sm: 0 5px 20px rgba(0,0,0,0.1);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.15);
+            --shadow-lg: 0 15px 40px rgba(0,0,0,0.2);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.3);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ===== CUSTOM SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-1);
+            border-radius: 6px;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            background: rgba(10, 37, 64, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(10, 37, 64, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-menu a:hover::before,
+        .nav-menu a.active::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,168,150,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,168,150,0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--primary);
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0,168,150,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,107,74,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(218,165,32,0.3) 0%, transparent 50%);
+            animation: moveGradient 15s ease infinite;
+        }
+
+        @keyframes moveGradient {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            color: var(--white);
+            animation: slideInLeft 1s ease;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-content h1 span {
+            color: var(--secondary);
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .hero-image {
+            animation: slideInRight 1s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            animation: floatImage 6s ease-in-out infinite;
+        }
+
+        @keyframes floatImage {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* ===== PAYMENT METHODS SECTION ===== */
+        .payment-section {
+            padding: 6rem 0;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-header h2 span {
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .section-header h2 span::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .ethiopia-flag-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--light);
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+        }
+
+        .flag-dots {
+            display: flex;
+            gap: 5px;
+        }
+
+        .flag-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .flag-dot.green { background: var(--ethiopia-green); }
+        .flag-dot.yellow { background: var(--ethiopia-gold); }
+        .flag-dot.red { background: var(--ethiopia-red); }
+
+        /* Payment Methods Grid */
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .payment-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .payment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .payment-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .payment-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .payment-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: var(--transition);
+        }
+
+        .payment-card:hover .payment-icon {
+            transform: rotateY(360deg);
+            background: var(--gradient-1);
+            color: var(--white);
+        }
+
+        .payment-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .payment-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--gray);
+        }
+
+        .payment-features i {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        .payment-badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: var(--gradient-1);
+            color: var(--white);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .payment-badge.local {
+            background: var(--ethiopia-green);
+        }
+
+        .payment-badge.international {
+            background: var(--primary);
+        }
+
+        /* Bank Partners */
+        .bank-partners {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .bank-partners h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .bank-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .bank-item {
+            width: 100px;
+            height: 100px;
+            background: var(--white);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .bank-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+            background: var(--gradient-1);
+            color: var(--white);
+        }
+
+        .bank-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .bank-item:hover i {
+            color: var(--white);
+        }
+
+        .bank-item span {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Mobile Money Section */
+        .mobile-money-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mobile-card {
+            background: linear-gradient(135deg, #f5f7fa, #e9ecef);
+            padding: 2rem;
+            border-radius: 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .mobile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mobile-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-card .telebirr { color: #8B4513; }
+        .mobile-card .mpesa { color: #4CAF50; }
+        .mobile-card .airtel { color: #E30A17; }
+
+        .qr-simulator {
+            width: 100px;
+            height: 100px;
+            background: var(--white);
+            border-radius: 20px;
+            margin: 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--dark);
+            border: 2px dashed var(--secondary);
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats {
+            padding: 4rem 0;
+            background: var(--gradient-1);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 5rem 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section .btn {
+            background: var(--white);
+            color: var(--primary);
+            font-size: 1.2rem;
+            padding: 1.2rem 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-1);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .mobile-money-showcase {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu,
+            .nav-buttons {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .payment-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bank-grid {
+                gap: 1rem;
+            }
+
+            .bank-item {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">ethio<span>Expertise</span></a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Web Solutions <br> <span>for Your Business</span></h1>
+                <p>We create stunning, responsive websites with secure payment integration for Ethiopian and international clients. Accept payments via CBE, Telebirr, M-PESA, and major credit cards.</p>
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn btn-primary">Get Started</a>
+                    <a href="portfolio.html" class="btn btn-outline">View Portfolio</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&h=400&fit=crop" alt="Web Development">
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section - NEW -->
+    <section class="payment-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Secure <span>Payment Methods</span></h2>
+                <p>We accept multiple payment options for your convenience in Ethiopia and worldwide</p>
+                <div class="ethiopia-flag-badge">
+                    <div class="flag-dots">
+                        <div class="flag-dot green"></div>
+                        <div class="flag-dot yellow"></div>
+                        <div class="flag-dot red"></div>
+                    </div>
+                    <span>4 Kilo, Addis Ababa</span>
+                </div>
+            </div>
+
+            <!-- Payment Methods Grid -->
+            <div class="payment-grid">
+                <!-- CBE Card -->
+                <div class="payment-card" onclick="location.href='payment.html?method=cbe'">
+                    <div class="payment-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>CBE</h3>
+                    <p>Commercial Bank of Ethiopia</p>
+                    <ul class="payment-features">
+                        <li><i class="fas fa-check"></i> Direct bank transfer</li>
+                        <li><i class="fas fa-check"></i> No fees for CBE customers</li>
+                        <li><i class="fas fa-check"></i> Instant processing</li>
+                    </ul>
+                    <span class="payment-badge local">🇪🇹 Local</span>
+                </div>
+
+                <!-- Telebirr Card -->
+                <div class="payment-card" onclick="location.href='payment.html?method=telebirr'">
+                    <div class="payment-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Telebirr</h3>
+                    <p>Ethiopia's Leading Mobile Money</p>
+                    <ul class="payment-features">
+                        <li><i class="fas fa-check"></i> Pay via QR code</li>
+                        <li><i class="fas fa-check"></i> Instant transfer</li>
+                        <li><i class="fas fa-check"></i> Available nationwide</li>
+                    </ul>
+                    <span class="payment-badge local">🇪🇹 Mobile</span>
+                </div>
+
+                <!-- M-PESA Card -->
+                <div class="payment-card" onclick="location.href='payment.html?method=mpesa'">
+                    <div class="payment-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>M-PESA</h3>
+                    <p>Mobile Money Transfer</p>
+                    <ul class="payment-features">
+                        <li><i class="fas fa-check"></i> Send money easily</li>
+                        <li><i class="fas fa-check"></i> Low transaction fees</li>
+                        <li><i class="fas fa-check"></i> Secure & reliable</li>
+                    </ul>
+                    <span class="payment-badge">🌍 Regional</span>
+                </div>
+
+                <!-- Visa/Mastercard Card -->
+                <div class="payment-card" onclick="location.href='payment.html?method=card'">
+                    <div class="payment-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Credit Cards</h3>
+                    <p>Visa • Mastercard • Amex</p>
+                    <ul class="payment-features">
+                        <li><i class="fas fa-check"></i> 256-bit SSL secure</li>
+                        <li><i class="fas fa-check"></i> International payments</li>
+                        <li><i class="fas fa-check"></i> Instant processing</li>
+                    </ul>
+                    <span class="payment-badge international">🌎 Global</span>
+                </div>
+            </div>
+
+            <!-- Bank Partners -->
+            <div class="bank-partners">
+                <h3>Partner Banks in Ethiopia</h3>
+                <div class="bank-grid">
+                    <div class="bank-item">
+                        <i class="fas fa-university"></i>
+                        <span>CBE</span>
+                    </div>
+                    <div class="bank-item">
+                        <i class="fas fa-university"></i>
+                        <span>Dashen</span>
+                    </div>
+                    <div class="bank-item">
+                        <i class="fas fa-university"></i>
+                        <span>Awash</span>
+                    </div>
+                    <div class="bank-item">
+                        <i class="fas fa-university"></i>
+                        <span>Abyssinia</span>
+                    </div>
+                    <div class="bank-item">
+                        <i class="fas fa-university"></i>
+                        <span>Wegagen</span>
+                    </div>
+                    <div class="bank-item">
+                        <i class="fas fa-university"></i>
+                        <span>NIB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Money Showcase -->
+            <div class="mobile-money-showcase">
+                <div class="mobile-card">
+                    <i class="fas fa-qrcode telebirr"></i>
+                    <h4>Telebirr QR</h4>
+                    <div class="qr-simulator">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <p>Scan & Pay</p>
+                </div>
+                <div class="mobile-card">
+                    <i class="fas fa-phone-alt mpesa"></i>
+                    <h4>M-PESA</h4>
+                    <div style="font-size: 2rem; margin: 1rem 0;">📱</div>
+                    <p>*334#</p>
+                </div>
+                <div class="mobile-card">
+                    <i class="fas fa-globe"></i>
+                    <h4>International</h4>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; margin: 1rem 0;">
+                        <i class="fab fa-cc-visa" style="color: #1A1F71;"></i>
+                        <i class="fab fa-cc-mastercard" style="color: #EB001B;"></i>
+                        <i class="fab fa-cc-amex" style="color: #2E77BB;"></i>
+                    </div>
+                    <p>Global payments</p>
+                </div>
+            </div>
+
+            <!-- Payment CTA -->
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="payment.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">
+                    <i class="fas fa-lock"></i> Make a Secure Payment
+                </a>
+                <p style="margin-top: 1rem; color: var(--gray);">
+                    <i class="fas fa-shield-alt"></i> 256-bit SSL Encrypted • PCI Compliant
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Services</span></h2>
+                <p>Professional web solutions with integrated payment systems</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites with payment integration for Ethiopian businesses</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Apps</h3>
+                    <p>Apps with Telebirr, M-PESA and card payment support</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Payment Integration</h3>
+                    <p>Integrate CBE, Telebirr, M-PESA, Visa, Mastercard</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure Checkout</h3>
+                    <p>256-bit SSL encrypted payment pages</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10k+</div>
+                    <p>Transactions</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <p>Payment Methods</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Get a free consultation and payment integration quote</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ethioExpertise</h3>
+                    <p>Professional web solutions with secure payment integration for Ethiopian and international clients.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Payment Methods</h4>
+                    <ul>
+                        <li><i class="fas fa-university"></i> CBE</li>
+                        <li><i class="fas fa-mobile-alt"></i> Telebirr</li>
+                        <li><i class="fas fa-wifi"></i> M-PESA</li>
+                        <li><i class="fab fa-cc-visa"></i> Visa/Mastercard</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 4 Kilo, Addis Ababa</li>
+                        <li><i class="fas fa-phone"></i> +251 911 234 567</li>
+                        <li><i class="fas fa-envelope"></i> info@ethioexpertise.et</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AliExpertise. Made with ❤️ in Ethiopia | Secure Payments 🇪🇹</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Counter animation
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const value = stat.innerText.replace('+', '');
+                // Animation logic here
+            });
+        }
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.payment-card, .service-card').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

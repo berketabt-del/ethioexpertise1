@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - ethioExpertise | Addis Ababa, Ethiopia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0A2540;
+            --secondary: #00A896;
+            --accent: #FF6B4A;
+            --light: #F8F9FA;
+            --dark: #2D3E50;
+            --white: #FFFFFF;
+            --gray: #6C757D;
+            --ethiopia-gold: #DAA520;
+            --ethiopia-green: #1E8C3C;
+            --ethiopia-red: #C41E3A;
+            --gradient-1: linear-gradient(135deg, #0A2540, #00A896);
+            --gradient-2: linear-gradient(135deg, #FF6B4A, #FF8E53);
+            --gradient-3: linear-gradient(135deg, #1E8C3C, #DAA520, #C41E3A);
+            --gradient-4: linear-gradient(135deg, #667eea, #764ba2);
+            --gradient-5: linear-gradient(135deg, #f093fb, #f5576c);
+            --gradient-ethiopia: linear-gradient(135deg, #1E8C3C, #DAA520, #C41E3A);
+            --shadow-sm: 0 5px 20px rgba(0,0,0,0.1);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.15);
+            --shadow-lg: 0 15px 40px rgba(0,0,0,0.2);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.3);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ===== CUSTOM SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-1);
+            border-radius: 6px;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            background: rgba(10, 37, 64, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(10, 37, 64, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+            position: relative;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 5px rgba(0,168,150,0.5); }
+            50% { text-shadow: 0 0 20px rgba(0,168,150,0.8); }
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-menu a:hover::before,
+        .nav-menu a.active::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,168,150,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,168,150,0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            background: var(--primary);
+            padding: 10rem 0 6rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0,168,150,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,107,74,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(218,165,32,0.3) 0%, transparent 50%);
+            animation: moveGradient 15s ease infinite;
+        }
+
+        @keyframes moveGradient {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .page-header h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(0,168,150,0.5); }
+            50% { text-shadow: 0 0 30px rgba(0,168,150,0.8), 0 0 50px rgba(255,107,74,0.5); }
+        }
+
+        .page-header h1 span {
+            color: transparent;
+            background: linear-gradient(135deg, #00A896, #FF6B4A, #DAA520);
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 300% 300%;
+            animation: gradientShift 5s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ethiopia-flag-banner {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flag-strip {
+            width: 60px;
+            height: 20px;
+            border-radius: 30px;
+            animation: flagWave 3s ease-in-out infinite;
+        }
+
+        .flag-strip.green { 
+            background: var(--ethiopia-green);
+            animation-delay: 0s;
+        }
+        .flag-strip.yellow { 
+            background: var(--ethiopia-gold);
+            animation-delay: 0.2s;
+        }
+        .flag-strip.red { 
+            background: var(--ethiopia-red);
+            animation-delay: 0.4s;
+        }
+
+        @keyframes flagWave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ===== SERVICES INTRO ===== */
+        .services-intro {
+            padding: 5rem 0;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .intro-content h2 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-content h2 span {
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .intro-content h2 span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .intro-content p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .intro-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .intro-stat {
+            text-align: center;
+        }
+
+        .intro-stat .number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1;
+        }
+
+        .intro-stat .label {
+            color: var(--gray);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== MAIN SERVICES SECTION ===== */
+        .services-main {
+            padding: 3rem 0 6rem;
+            background: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-main::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,168,150,0.05) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 40px;
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-card:hover * {
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-icon {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3.5rem;
+            color: var(--white);
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--white);
+            color: var(--secondary);
+            transform: rotateY(360deg) scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-features li {
+            color: var(--white);
+        }
+
+        .service-features i {
+            color: var(--secondary);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-features i {
+            color: var(--white);
+        }
+
+        .service-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .service-price span {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+
+        .service-card:hover .service-price span {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .service-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+        }
+
+        .service-card:hover .service-btn {
+            background: var(--white);
+            color: var(--primary);
+            border-color: var(--white);
+        }
+
+        .service-btn i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .service-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Popular Badge */
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-2);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 3;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ===== PROCESS SECTION ===== */
+        .process-section {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-header h2 span {
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .section-header h2 span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-1);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .process-step {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .process-step:hover .step-number {
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .process-step p {
+            color: var(--gray);
+        }
+
+        /* ===== TECHNOLOGY STACK ===== */
+        .tech-stack {
+            padding: 5rem 0;
+            background: var(--gradient-1);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-stack::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        .tech-stack h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-stack h2 span {
+            color: var(--ethiopia-gold);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem 1rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .tech-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255,255,255,0.2);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .tech-item i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-item span {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing-section {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 40px;
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .pricing-card.popular {
+            transform: scale(1.05);
+            border: 2px solid var(--secondary);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-15px);
+        }
+
+        .popular-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-2);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-header h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-header .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        .pricing-header .price span {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+
+        .pricing-features i {
+            color: var(--secondary);
+        }
+
+        .pricing-features .not-included {
+            opacity: 0.5;
+        }
+
+        .pricing-features .not-included i {
+            color: var(--accent);
+        }
+
+        .pricing-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient-1);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .pricing-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,168,150,0.4);
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .faq-question i {
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-gray);
+            color: var(--gray);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 5rem 0;
+            background: var(--gradient-1);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section .btn {
+            background: var(--white);
+            color: var(--primary);
+            font-size: 1.2rem;
+            padding: 1.2rem 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section .btn:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-1);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 4rem;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu,
+            .nav-buttons {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
+            }
+
+            .process-timeline::before {
+                display: none;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">ethio<span>Expertise</span></a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our <span>Services</span></h1>
+            <p>Comprehensive web solutions tailored for Ethiopian businesses and beyond</p>
+            <div class="ethiopia-flag-banner">
+                <div class="flag-strip green"></div>
+                <div class="flag-strip yellow"></div>
+                <div class="flag-strip red"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Intro -->
+    <section class="services-intro">
+        <div class="container">
+            <div class="intro-content">
+                <h2>What <span>We Offer</span></h2>
+                <p>From concept to launch, we provide end-to-end web solutions that help Ethiopian businesses establish a powerful online presence. Our team combines creativity with technical expertise to deliver exceptional results that drive growth and engagement.</p>
+                
+                <div class="intro-stats">
+                    <div class="intro-stat">
+                        <div class="number">50+</div>
+                        <div class="label">Projects Delivered</div>
+                    </div>
+                    <div class="intro-stat">
+                        <div class="number">100%</div>
+                        <div class="label">Client Satisfaction</div>
+                    </div>
+                    <div class="intro-stat">
+                        <div class="number">24/7</div>
+                        <div class="label">Support</div>
+                    </div>
+                    <div class="intro-stat">
+                        <div class="number">6</div>
+                        <div class="label">Payment Methods</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="services-main">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Service 1: Web Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites and web applications built with modern technologies</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Responsive Design (Mobile/Tablet/Desktop)</li>
+                        <li><i class="fas fa-check"></i> Custom CMS Integration</li>
+                        <li><i class="fas fa-check"></i> E-commerce Solutions</li>
+                        <li><i class="fas fa-check"></i> Payment Gateway Integration (CBE, Telebirr)</li>
+                        <li><i class="fas fa-check"></i> SEO Optimization</li>
+                        <li><i class="fas fa-check"></i> 24/7 Technical Support</li>
+                    </ul>
+                    <div class="service-price">
+                        ₿ 2,499 <span>starting</span>
+                    </div>
+                    <a href="contact.html" class="service-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Service 2: Mobile Apps (Popular) -->
+                <div class="service-card">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Apps</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> iOS & Android Development</li>
+                        <li><i class="fas fa-check"></i> Cross-platform (Flutter/React Native)</li>
+                        <li><i class="fas fa-check"></i> Telebirr Integration</li>
+                        <li><i class="fas fa-check"></i> Push Notifications</li>
+                        <li><i class="fas fa-check"></i> App Store Publishing</li>
+                        <li><i class="fas fa-check"></i> Analytics Integration</li>
+                    </ul>
+                    <div class="service-price">
+                        ₿ 3,999 <span>starting</span>
+                    </div>
+                    <a href="contact.html" class="service-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Service 3: UI/UX Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful, user-centered designs that engage and convert</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> User Research & Personas</li>
+                        <li><i class="fas fa-check"></i> Wireframing & Prototyping</li>
+                        <li><i class="fas fa-check"></i> Interactive Mockups</li>
+                        <li><i class="fas fa-check"></i> Usability Testing</li>
+                        <li><i class="fas fa-check"></i> Design Systems</li>
+                        <li><i class="fas fa-check"></i> Accessibility Compliance</li>
+                    </ul>
+                    <div class="service-price">
+                        ₿ 1,499 <span>starting</span>
+                    </div>
+                    <a href="contact.html" class="service-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Service 4: E-Commerce -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-Commerce</h3>
+                    <p>Online stores with complete payment and inventory management</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Product Management</li>
+                        <li><i class="fas fa-check"></i> Shopping Cart & Checkout</li>
+                        <li><i class="fas fa-check"></i> CBE & Telebirr Integration</li>
+                        <li><i class="fas fa-check"></i> Inventory Tracking</li>
+                        <li><i class="fas fa-check"></i> Order Management</li>
+                        <li><i class="fas fa-check"></i> Customer Accounts</li>
+                    </ul>
+                    <div class="service-price">
+                        ₿ 3,499 <span>starting</span>
+                    </div>
+                    <a href="contact.html" class="service-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Service 5: SEO & Marketing -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>SEO & Marketing</h3>
+                    <p>Drive organic traffic and grow your online presence</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Keyword Research</li>
+                        <li><i class="fas fa-check"></i> On-Page SEO</li>
+                        <li><i class="fas fa-check"></i> Content Strategy</li>
+                        <li><i class="fas fa-check"></i> Local SEO (Ethiopia)</li>
+                        <li><i class="fas fa-check"></i> Google Analytics</li>
+                        <li><i class="fas fa-check"></i> Monthly Reports</li>
+                    </ul>
+                    <div class="service-price">
+                        ₿ 999 <span>monthly</span>
+                    </div>
+                    <a href="contact.html" class="service-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Service 6: Payment Integration -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Payment Integration</h3>
+                    <p>Secure payment solutions for Ethiopian and international customers</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> CBE Bank Integration</li>
+                        <li><i class="fas fa-check"></i> Telebirr Integration</li>
+                        <li><i class="fas fa-check"></i> M-PESA Integration</li>
+                        <li><i class="fas fa-check"></i> Visa/Mastercard</li>
+                        <li><i class="fas fa-check"></i> 256-bit SSL Security</li>
+                        <li><i class="fas fa-check"></i> PCI Compliance</li>
+                    </ul>
+                    <div class="service-price">
+                        ₿ 1,999 <span>one-time</span>
+                    </div>
+                    <a href="contact.html" class="service-btn">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We <span>Work</span></h2>
+                <p>A streamlined process designed for Ethiopian businesses</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We meet with you (in person at 4 Kilo or virtually) to understand your business goals and requirements.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Planning</h3>
+                    <p>We create wireframes, sitemaps, and project timelines tailored to your needs and budget.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Design</h3>
+                    <p>Our designers craft beautiful, user-friendly interfaces that reflect your brand identity.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Development</h3>
+                    <p>We bring designs to life with clean, efficient code and modern technologies.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Testing</h3>
+                    <p>Rigorous testing ensures everything works perfectly across all devices and browsers.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Launch & Support</h3>
+                    <p>We deploy your project and provide ongoing maintenance and 24/7 support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2>Technologies <span>We Master</span></h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <i class="fab fa-html5" style="color: #E34F26;"></i>
+                    <span>HTML5</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+                    <span>CSS3</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-js" style="color: #F7DF1E;"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-react" style="color: #61DAFB;"></i>
+                    <span>React</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-node" style="color: #339933;"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-python" style="color: #3776AB;"></i>
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database" style="color: #4DB33D;"></i>
+                    <span>MongoDB</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-cloud" style="color: #FF9900;"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-wordpress" style="color: #21759B;"></i>
+                    <span>WordPress</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-shopify" style="color: #7AB55C;"></i>
+                    <span>Shopify</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Flexible <span>Pricing</span></h2>
+                <p>Choose the plan that fits your business needs</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Basic Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Basic</h3>
+                        <div class="price">₿ 999</div>
+                        <span>one-time</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 5 Pages Website</li>
+                        <li><i class="fas fa-check"></i> Responsive Design</li>
+                        <li><i class="fas fa-check"></i> Contact Form</li>
+                        <li><i class="fas fa-check"></i> Basic SEO</li>
+                        <li><i class="fas fa-times not-included"></i> E-commerce</li>
+                        <li><i class="fas fa-times not-included"></i> Payment Integration</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-btn">Get Started</a>
+                </div>
+
+                <!-- Professional Plan (Popular) -->
+                <div class="pricing-card popular">
+                    <div class="popular-tag">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <div class="price">₿ 2,499</div>
+                        <span>one-time</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 10 Pages Website</li>
+                        <li><i class="fas fa-check"></i> Responsive Design</li>
+                        <li><i class="fas fa-check"></i> Custom CMS</li>
+                        <li><i class="fas fa-check"></i> Advanced SEO</li>
+                        <li><i class="fas fa-check"></i> Basic E-commerce</li>
+                        <li><i class="fas fa-check"></i> CBE/Telebirr Integration</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-btn">Get Started</a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">Custom</div>
+                        <span>tailored solution</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited Pages</li>
+                        <li><i class="fas fa-check"></i> Advanced Features</li>
+                        <li><i class="fas fa-check"></i> Custom Development</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                        <li><i class="fas fa-check"></i> Full E-commerce</li>
+                        <li><i class="fas fa-check"></i> Dedicated Team</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-btn">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked <span>Questions</span></h2>
+                <p>Everything you need to know about our services</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>How long does it take to build a website?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Timeline varies based on complexity. A simple business website typically takes 4-6 weeks, while e-commerce sites or web applications may take 2-4 months. We'll provide a detailed timeline during our initial consultation.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Do you accept payment in Ethiopian Birr?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! We accept payment in Ethiopian Birr via CBE, Telebirr, and other local payment methods. We also accept international payments via Visa/Mastercard.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Do you provide hosting services?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! We offer reliable hosting packages with 99.9% uptime guarantee, regular backups, and 24/7 monitoring. Hosting can be purchased monthly or annually.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Can you integrate Telebirr or CBE payment?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! We specialize in integrating Ethiopian payment methods including CBE, Telebirr, and M-PESA. We also support international payment gateways.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Do you offer maintenance after launch?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! We offer various maintenance packages to keep your site secure, updated, and performing optimally. All packages include 24/7 support and monitoring.
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFAQ(this)">
+                    <div class="faq-question">
+                        <span>Can we meet at your 4 Kilo office?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Certainly! We're located at 4 Kilo, Addis Ababa, opposite Addis Ababa University. We welcome in-person meetings by appointment. You can also reach us via phone or video call.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's discuss how we can help your business grow online</p>
+            <a href="contact.html" class="btn btn-primary">Get Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AliExpertise</h3>
+                    <p>Professional web solutions from the heart of Addis Ababa, Ethiopia. We help businesses establish a powerful online presence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>Mobile Apps</li>
+                        <li>UI/UX Design</li>
+                        <li>E-Commerce</li>
+                        <li>SEO & Marketing</li>
+                        <li>Payment Integration</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 4 Kilo, Addis Ababa</li>
+                        <li><i class="fas fa-phone"></i> +251 911 234 567</li>
+                        <li><i class="fas fa-envelope"></i> info@aliexpertise.et</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AliExpertise. Made with ❤️ in Ethiopia | 4 Kilo, Addis Ababa 🇪🇹</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            element.classList.toggle('active');
+        }
+
+        // Counter animation
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseInt(stat.innerText.replace('+', ''));
+                // Animation logic here
+            });
+        }
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.service-card, .pricing-card, .process-step').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
